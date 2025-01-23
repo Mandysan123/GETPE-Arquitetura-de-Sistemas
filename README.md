@@ -6,6 +6,28 @@
 
 Este é um sistema simples para gestão de tarefas entre equipes, desenvolvido em Python utilizando o framework **FastAPI** e o banco de dados **SQLite**. O objetivo é facilitar o cadastro, gerenciamento e acompanhamento das tarefas atribuídas a diferentes membros da equipe.
 
+## Equipe 👩‍💻👩‍💻
+<table align="center">
+  <tr>
+    <td align="center">
+      <a href="#">
+        <img src="https://avatars.githubusercontent.com/u/105436281?v=4" width="150px;" alt="Fernanda Kipper Profile Picture"/><br>
+        <sub>
+          <b>Gabriely Morais</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/Mandysan123">
+        <img src="https://avatars.githubusercontent.com/u/105436946?v=4" width="150px;" alt="Foto do Caynã"/><br>
+        <sub>
+          <b>Amanda Morais</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
+
 ## Funcionalidades Principais ✅
 
 1. **Gerenciamento de Usuários:**
