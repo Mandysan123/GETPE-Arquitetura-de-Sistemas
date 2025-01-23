@@ -2,22 +2,23 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from database import get_db
 from services.tarefa_service import adicionar_tarefa, obter_tarefas
-from pydantic import BaseModel
+from schemas.tarefa import TarefaCreate, TarefaResponse
 
-class TarefaSchema(BaseModel):
-    titulo: str
-    descricao: str
-    usuario_id: int
+router = APIRouter()
 
-class FiltroTarefaSchema(BaseModel):
-    status: str = None
+@router.post("/criar-tarefa/", response_model=TarefaResponse)
+def criar_tarefa_endpoint(tarefa: TarefaCreate, db: Session = Depends(get_db)):
+    try:
+        return adicionar_tarefa(
+            db=db,
+            titulo=tarefa.titulo,
+            descricao=tarefa.descricao,
+            status=tarefa.status,
+            usuario_nome=tarefa.usuario_nome,
+        )
+    except ValueError as e:
+        raise HTTPException(status_code=404, detail=str(e))
 
-tarefa_router = APIRouter()
-
-@tarefa_router.post("/")
-def criar_tarefa(tarefa: TarefaSchema, db: Session = Depends(get_db)):
-    return adicionar_tarefa(db, tarefa.titulo, tarefa.descricao, tarefa.usuario_id)
-
-@tarefa_router.get("/")
-def listar_tarefas(filtro: FiltroTarefaSchema = Depends(), db: Session = Depends(get_db)):
-    return obter_tarefas(db, filtro.status)
+@router.get("/listar-tarefas/", response_model=list[TarefaResponse])
+def listar_tarefas_endpoint(db: Session = Depends(get_db)):
+    return obter_tarefas(db=db)

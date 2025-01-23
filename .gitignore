@@ -1,0 +1,12 @@
+# Ignorar diretórios __pycache__
+__pycache__/
+
+# Ignorar arquivos compilados do Python
+*.py[cod]
+
+# Ignorar arquivos de banco de dados SQLite gerados
+*.sqlite3
+*.db
+
+# Ignorar outras configurações específicas do ambiente
+.env

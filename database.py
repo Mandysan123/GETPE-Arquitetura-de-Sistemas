@@ -1,4 +1,5 @@
 from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 # URL do banco de dados SQLite
@@ -12,6 +13,9 @@ engine = create_engine(
 # Configuração da sessão
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
+# Base para os modelos ORM
+Base = declarative_base()
+
 # Dependência para obter uma sessão de banco de dados
 def get_db():
     db = SessionLocal()
@@ -19,3 +23,4 @@ def get_db():
         yield db
     finally:
         db.close()
+
