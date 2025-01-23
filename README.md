@@ -127,4 +127,11 @@ Uma coleção Postman foi incluída no projeto (localizada em `tests/postman_col
 
 ---
 
+## Vídeo Explicativo do Código 🎥  
+
+Para facilitar o entendimento do funcionamento do sistema, preparamos um vídeo explicativo onde detalhamos a arquitetura do projeto, as principais funcionalidades e como utilizá-lo. Assista abaixo:  
+
+[![Clique para assistir o vídeo explicativo](https://img.youtube.com/vi/SEU_VIDEO_ID/maxresdefault.jpg)](https://youtu.be/1omB555DWq8?si=zkCwVLFVzxN5P9zL)
+
+
 Se tiver dúvidas ou sugestões, fique à vontade para contribuir! 😊
